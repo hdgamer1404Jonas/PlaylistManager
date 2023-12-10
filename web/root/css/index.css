@@ -1,3 +1,7 @@
+:not(:defined) {
+    visibility: hidden;
+}
+
 body::after {
     content: "";
     background: url("/assets/images/background.jpeg");
