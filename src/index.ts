@@ -2,6 +2,7 @@ import express from 'express';
 import * as endpoints from './endpoints/endpoints';
 import session from 'express-session';
 import path from 'path';
+import * as db from './database/database';
 
 const config = require('../config.json');
 
@@ -24,6 +25,7 @@ app.use('/', express.static(path.join(__dirname, '../web/root')));
 
 app.listen(config.port, () => {
     console.log(`Server is running on port ${config.port}`);
+    db.connect();
 });
 
 
@@ -32,6 +34,5 @@ export const isAuthenticated = (req: express.Request, res: express.Response, nex
     if (req.session!.access_token) {
         return next();
     }
-
     res.redirect('/login');
 };
