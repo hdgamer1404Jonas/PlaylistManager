@@ -1,0 +1,262 @@
+body::after {
+    content: "";
+    background: url("/assets/images/background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(8px) brightness(50%);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.nav_logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+
+.nav_logo img {
+    margin: 0 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.logo_text {
+    border-left: 3px solid white;
+    padding-left: 20px;
+    min-height: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.nav_links a {
+    margin: 0 20px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    transition: 0.3s;
+    text-shadow: 0 0 2px #ffffff;
+}
+
+.nav_links a:hover {
+    color: #b1afaf;
+    text-shadow: 0 0 5px #b1afaf;
+}
+
+.content {
+    position: relative;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title_container {
+    position: relative;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.subtitle {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 0 0 5px #ffffff;
+}
+
+.subtitle a {
+    color: white;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    transition: 0.3s;
+    text-shadow: 0 0 2px #ffffff;
+    border-bottom: 2px solid white;
+}
+
+.subtitle a:hover {
+    color: #b1afaf;
+    text-shadow: 0 0 5px #b1afaf;
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(35, 35, 37, 0.507);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 0 10px #000000;
+}
+
+.footer_top {
+    font-size: 15px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    transition: 0.3s;
+}
+
+.nav_mobile {
+    display: none;
+}
+
+.drawer-overview {
+    color: white;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.drawer_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.drawer_content a {
+    color: white;
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.drawer_content a:hover {
+    color: #b1afaf;
+    text-shadow: 0 0 5px #b1afaf;
+}
+
+@media screen and (max-width: 850px) {
+    .nav {
+        display: none;
+    }
+
+    .nav_mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+    }
+
+    .nav_logo {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Roboto", sans-serif;
+        min-height: 40px;
+    }
+
+    .nav_logo img {
+        margin: 0 10px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .nav_menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 10px;
+        right: 20px;
+    }
+
+    .nav_menu sl-icon-button {
+        font-size: 40px;
+    }
+
+    .title_container {
+        top: 100px;
+    }
+
+    .title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .logo_text {
+        display: none;
+    }
+}
