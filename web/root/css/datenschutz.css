@@ -88,7 +88,7 @@ body::after {
 
 .content {
     position: relative;
-    top: 60px;
+    top: 100px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -97,46 +97,46 @@ body::after {
     align-items: center;
 }
 
-.title_container {
-    position: relative;
-    top: 200px;
-    left: 0;
-    width: 100%;
+.content_container {
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.title {
+.content_title {
     color: white;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     font-family: "Roboto", sans-serif;
-    text-shadow: 0 0 5px #ffffff;
+    margin-bottom: 20px;
 }
 
-.subtitle {
+.content_content {
     color: white;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 15px;
     font-family: "Roboto", sans-serif;
-    text-shadow: 0 0 5px #ffffff;
+    text-align: justify;
+    margin-bottom: 20px;
 }
 
-.subtitle a {
-    color: white;
-    font-weight: bold;
-    font-family: "Roboto", sans-serif;
-    transition: 0.3s;
-    text-shadow: 0 0 2px #ffffff;
-    border-bottom: 2px solid white;
+.hv_1 {
+    font-style: italic;
+    color: gray;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
-.subtitle a:hover {
-    color: #b1afaf;
-    text-shadow: 0 0 5px #b1afaf;
-    cursor: pointer;
+.hv_2 {
+    margin-top: 5px;
+}
+
+.hv_3 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 .footer {
@@ -241,18 +241,16 @@ body::after {
         font-size: 40px;
     }
 
-    .title_container {
-        top: 100px;
+    .content {
+        top: 20px;
     }
 
-    .title {
+    .content_container {
+        width: 90%;
+    }
+
+    .content_title {
         font-size: 30px;
-        text-align: center;
-    }
-
-    .subtitle {
-        font-size: 20px;
-        text-align: center;
     }
 }
 

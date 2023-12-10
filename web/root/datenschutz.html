@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/images/logo.png">
+    <title>Playlist Manager</title>
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:light)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/light.css"
+        />
+    <link
+        rel="stylesheet"
+        media="(prefers-color-scheme:dark)"
+        href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css"
+        onload="document.documentElement.classList.add('sl-theme-dark');"
+    />
+    <link rel="stylesheet" href="css/datenschutz.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav_logo">
+            <a href="/">
+                <img src="/assets/images/logo.png" alt="Logo">
+            </a>
+            <div class="logo_text">Playlist Manager</div>
+        </div>
+        <div class="nav_links">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/profile">Profil</a>
+        </div>
+    </nav>
+
+    <nav class="nav_mobile">
+        <div class="nav_logo">
+            <a href="/">
+                <img src="/assets/images/logo.png" alt="Logo">
+            </a>
+            <div class="logo_text">Playlist Manager</div>
+        </div>
+        <div class="nav_menu">
+            <sl-icon-button id="openMenu" name="list"></sl-icon-button>
+        </div>
+    </nav>
+
+    <sl-drawer label="PlaylistManager" class="drawer-overview">
+        <div class="drawer_content">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/profile">Profil</a>
+        </div>
+
+        <sl-divider slot="footer"></sl-divider>
+        <sl-button slot="footer" variant="primary">Close</sl-button>
+    </sl-drawer>
+
+    <main class="content">
+        <div class="content_container">
+            <div class="content_title">Datenschutzerklärung</div>
+            <div class="content_content">
+                <div class="hv_1">
+                    Datum der letzten Aktualisierung: 10.12.2023
+                </div>
+                <div class="hv_2">
+                    Wir freuen uns über Ihr Interesse an unserer Website zur Playlist-Verwaltung. Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie ausführlich über den Umgang mit Ihren Daten.
+                </div>
+                <div class="hv_3">
+                    1. Erhebung, Verarbeitung und Nutzung personenbezogener Daten
+                </div>
+                <div class="hv_2">
+                    a) Anmeldung mit Spotify
+                    Für die Nutzung bestimmter Funktionen unserer Website ist eine Anmeldung über Spotify erforderlich. Dabei werden keinerlei Spotify-Anmeldedaten auf unserer Website gespeichert. Die Autorisierung erfolgt direkt über die Spotify-API.
+
+                    b) Verwendung der Spotify-API
+                    Unsere Website integriert die Spotify-API, um auf Ihre Playlists und andere relevante Daten zuzugreifen. Die Nutzung der Spotify-API unterliegt den Datenschutzbestimmungen von Spotify.
+                </div>
+                <div class="hv_3">
+                    2. Weitergabe von Daten an Dritte
+                </div>
+                <div class="hv_2">
+                    Wir geben Ihre personenbezogenen Daten nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter, es sei denn, dies ist zur Vertragserfüllung oder zur Erfüllung gesetzlicher Verpflichtungen erforderlich.
+                </div>
+                <div class="hv_3">
+                    3. Datensicherheit
+                </div>
+                <div class="hv_2">
+                    Unsere Website legt höchsten Wert auf Datensicherheit. Wir speichern keine sensiblen Informationen wie Login-Daten oder Passwörter. Stattdessen verwenden wir sicherheitsrelevante Informationen wie Ihre E-Mail-Adresse oder Spotify-ID, um Sie als Nutzer zu identifizieren und die Funktionalität der Playlist-Verwaltung zu gewährleisten. Unsere technischen und organisatorischen Sicherheitsmaßnahmen werden regelmäßig überprüft und dem technologischen Fortschritt angepasst.
+                </div>
+                <div class="hv_3">
+                    4. Cookies
+                </div>
+                <div class="hv_2">
+                    Unsere Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie richten keinen Schaden an und enthalten keine Viren. Sie können die Verwendung von Cookies in den Einstellungen Ihres Browsers jederzeit deaktivieren.
+                </div>
+                <div class="hv_3">
+                    5. Ihre Rechte als Nutzer
+                </div>
+                <div class="hv_2">
+                    Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit Ihrer personenbezogenen Daten. Kontaktieren Sie uns hierfür bitte unter den oben angegebenen Kontaktdaten.
+                </div>
+                <div class="hv_3">
+                    6. Änderungen der Datenschutzerklärung
+                </div>
+                <div class="hv_2">
+                    Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+                </div>
+                <div class="hv_1">
+                    Stand: 10.12.2023
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class = "footer">
+        <div class="footer_top">
+            <a href="/datenschutz">Datenschutzerklärung</a> | <a href="/impressum">Impressum</a> | <a href="https://github.com/hdgamer1404Jonas/PlaylistManager">Source</a>
+        </div>
+        <div class="footer_bottom">
+            ©️ 2024 JNWH
+        </div>
+    </footer>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/tooltip/tooltip.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/alert/alert.js"></script>
+    <script src="scripts/datenschutz.js"></script>
+</body>
+</html>
