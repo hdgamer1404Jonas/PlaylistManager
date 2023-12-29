@@ -52,6 +52,12 @@ export async function enp_callback(req: Request, res: Response) {
     }
 
     await db.checkInsUser(User);
-
-    res.redirect("/");
+    
+    // @ts-ignore
+    if(req.session.code) {
+        // @ts-ignore
+        res.redirect(`/m/add?code=${req.session.code}`);
+    } else {
+        res.redirect("/");
+    }
 }

@@ -1,17 +1,28 @@
-import express from 'express';
-import * as endpoints from './endpoints/endpoints';
-import session from 'express-session';
-import path from 'path';
-import * as db from './database/database';
-import axios from 'axios';
+import { Request, Response } from "express";
+import axios from "axios";
+import { user } from "../../types/user";
+import * as db from "../../database/database";
+const config = require('../../../config.json');
 
-const config = require('../config.json');
+export async function enp_code_addplaylist(req: Request, res: Response) {
+    if (!req.query || !req.query.code) {
+        res.status(400).send("Bad Request");
+    }
 
-const app = express();
+    const auth = await isAuthenticated(req, res);
 
-export const isAuthenticated = (req: express.Request, res: express.Response, next: () => void) => {
+    if (!auth) {
+        return;
+    }
+
+    
+}
+
+const isAuthenticated = (req: Request, res: Response) => {
     // @ts-ignore
     if (!req.session.access_token) {
+        // @ts-ignore
+        req.session!.code = req.query.code;
         res.redirect('/login');
         return;
     }
@@ -55,26 +66,6 @@ export const isAuthenticated = (req: express.Request, res: express.Response, nex
             req.session!.refresh_token = refresh_token;
         }
     });
+
+    return true;
 };
-
-app.use(
-    session({
-        secret: config.sessionsecret,
-        resave: false,
-        saveUninitialized: false,
-    })
-);
-
-
-app.get('/callback', endpoints.enp_callback);
-
-app.get('/login', endpoints.enp_login);
-
-app.get('/m/add', endpoints.enp_code_addplaylist);
-
-app.use('/', express.static(path.join(__dirname, '../web/root')));
-
-app.listen(config.port, () => {
-    console.log(`Server is running on port ${config.port}`);
-    db.connect();
-});
