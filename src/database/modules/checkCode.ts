@@ -19,7 +19,9 @@ export async function checkCode(codeString: string): Promise<code | null> {
         // @ts-ignore
         playlist_id: rows[0].playlist_id,
         // @ts-ignore
-        creator_id: rows[0].creator_id
+        creator_id: rows[0].creator_id,
+        // @ts-ignore
+        permissions: JSON.parse(rows[0].permissions)
     }
 
     return codeData;

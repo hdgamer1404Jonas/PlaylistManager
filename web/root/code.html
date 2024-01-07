@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/images/logo.png">
-    <title>Playlist Manager</title>
+    <title>Playlist Code</title>
     <link
         rel="stylesheet"
         media="(prefers-color-scheme:light)"
@@ -16,7 +16,7 @@
         href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/themes/dark.css"
         onload="document.documentElement.classList.add('sl-theme-dark');"
     />
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/code.css">
 </head>
 <body>
 
@@ -61,9 +61,10 @@
 
     <main class="content">
         <div class="title_container">
-            <div class="title">Willkommen beim PlaylistManager</div>
+            <div class="title">Playlist Einladung</div>
             <div class="subtitle">
-                Das Nr. 1 Tool zur Musikverwaltung für DJs, Events & Partys
+                <sl-input id="input" placeholder="Einladungs Code"></sl-input>
+                <sl-button disabled id="button">Eingabe</sl-button>
             </div>
         </div>
     </main>
@@ -82,6 +83,7 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/tooltip/tooltip.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/alert/alert.js"></script>
-    <script src="scripts/index.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/components/input/input.js"></script>
+    <script src="scripts/code.js"></script>
 </body>
 </html>

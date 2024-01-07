@@ -44,6 +44,7 @@ export async function enp_callback(req: Request, res: Response) {
         id: "0",
         spotifyId: user.data.id,
         spotifyName: user.data.display_name,
+        userName: user.data.display_name,
         email: user.data.email,
         settings: {
             recieveEmails: true
