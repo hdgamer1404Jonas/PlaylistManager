@@ -5,6 +5,7 @@ import * as db from "../../database/database";
 import { checkCode } from "../../database/modules/checkCode";
 const config = require('../../../config.json');
 import { getUser, addUserPlaylist } from "../../database/modules/user";
+import { getPlaylist } from "../../database/modules/playlist";
 
 export async function enp_code_addplaylist(req: Request, res: Response) {
     if (!req.query || !req.query.code) {
@@ -23,11 +24,16 @@ export async function enp_code_addplaylist(req: Request, res: Response) {
     // @ts-ignore
     const codeData = await checkCode(code);
 
+    console.log(codeData);
+
     if (!codeData) {
         res.redirect("/error/code_invalid.html");
         return;
     }
-    
+
+
+    const playlist = await getPlaylist(codeData.playlist_id);
+
     // @ts-ignore
     const user = await getUser(req.session.user.id);
 
