@@ -9,7 +9,7 @@ const config = require('../config.json');
 
 const app = express();
 
-export const isAuthenticated = (req: express.Request, res: express.Response, next: () => void) => {
+export const isAuthenticated = async (req: express.Request, res: express.Response, next: () => void) => {
     // @ts-ignore
     if (!req.session.access_token) {
         res.redirect('/login');
@@ -22,7 +22,7 @@ export const isAuthenticated = (req: express.Request, res: express.Response, nex
     let refresh_token = req.session.refresh_token;
 
     // check if the access token is still valid, if not, refresh it
-    axios.get("https://api.spotify.com/v1/me", {
+    await axios.get("https://api.spotify.com/v1/me", {
         headers: {
             "Authorization": `Bearer ${access_token}`
         }
@@ -73,6 +73,8 @@ app.get('/login', endpoints.enp_login);
 app.get('/m/add', endpoints.enp_code_addplaylist);
 
 app.use('/', express.static(path.join(__dirname, '../web/root')));
+
+app.use('/error/', express.static(path.join(__dirname, '../web/errors')));
 
 app.listen(config.port, () => {
     console.log(`Server is running on port ${config.port}`);

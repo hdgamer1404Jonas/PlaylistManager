@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import axios from "axios";
 import { user } from "../../types/user";
 import * as db from "../../database/database";
+import { checkCode } from "../../database/modules/checkCode";
 const config = require('../../../config.json');
 
 export async function enp_code_addplaylist(req: Request, res: Response) {
@@ -15,10 +16,21 @@ export async function enp_code_addplaylist(req: Request, res: Response) {
         return;
     }
 
+    // check if the code is valid
+    const code = req.query.code;
+
+    // @ts-ignore
+    const codeData = await checkCode(code);
+
+    if (!codeData) {
+        res.redirect("/error/code_invalid.html");
+        return;
+    }
+    
     
 }
 
-const isAuthenticated = (req: Request, res: Response) => {
+const isAuthenticated = async (req: Request, res: Response) => {
     // @ts-ignore
     if (!req.session.access_token) {
         // @ts-ignore
@@ -33,7 +45,7 @@ const isAuthenticated = (req: Request, res: Response) => {
     let refresh_token = req.session.refresh_token;
 
     // check if the access token is still valid, if not, refresh it
-    axios.get("https://api.spotify.com/v1/me", {
+    await axios.get("https://api.spotify.com/v1/me", {
         headers: {
             "Authorization": `Bearer ${access_token}`
         }
